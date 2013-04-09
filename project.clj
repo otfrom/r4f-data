@@ -18,7 +18,7 @@
                                                 org.slf4j/slf4j-log4j12
                                                 log4j]]]}
              :provided {:dependencies [[org.apache.hadoop/hadoop-core "0.20.2-dev"]]}}
-  ;;:pedantic :warn
+  :pedantic :warn
   :aot [r4f-data.core]
   :main r4f-data.core
   :uberjar-name "r4f-data.jar"
