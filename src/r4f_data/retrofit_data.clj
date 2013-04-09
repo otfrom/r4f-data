@@ -50,7 +50,6 @@
     "b114ecb6-69fd-4d3d-a95a-e6be9a643c17:electricityConsumption"
     "7df3a10e-59b3-4a84-a3a6-c1f83064b8e5:electricityConsumption"
     "69bd639a-c88b-4477-8782-2c4f92a6594e:electricityConsumption"
-    "d8d1f13d-2287-4f8f-addf-a9c73780136d:electricityConsumption"
     "7b888fc4-7ae0-422f-827d-e0fb5d9065fe:electricityConsumption"
     "a41a2679-b525-4f42-9958-040b8c2c4a39:electricityConsumption"
     "330003dd-f0f5-4c39-95bb-581c53523aaa:electricityConsumption"
@@ -71,7 +70,6 @@
     "fcaa5e3b-57c5-40a7-a54a-4f0d790da3a2:gasAsHeatingFuel"
     "0478f36c-8751-4c1d-af56-e5d6dc7d380d:gasAsHeatingFuel"
     "745143c7-37d2-4e7f-aa00-a550df34e9aa:gasAsHeatingFuel"
-    "fb18d9ff-2f01-432e-af92-1a9961f8a3fb:gasAsHeatingFuel"
     "89d46428-5e47-45cb-b760-f919ab52038a:gasAsHeatingFuel"
     "6ae7adc3-7bdb-41cb-9492-a87a999ea5e0:gasAsHeatingFuel"
     "c3bed4c2-92fd-459a-bccc-5236301c512e:gasAsHeatingFuel"
@@ -81,8 +79,7 @@
     "ac8adb4e-39ea-4016-8b57-4bfda46ee7d9:gasAsHeatingFuel"
     "8f5c55cc-88ef-4927-b7ca-dec9c21182b6:gasAsHeatingFuel"
     "344aa09b-544e-47b7-852a-5019754b2193:gasAsHeatingFuel"
-    "662d7079-0604-4bd6-9ae5-dce0312bb35a:gasConsumption"
-    "6ae7adc3-7bdb-41cb-9492-a87a999ea5e0:gasConsumption"})
+    "662d7079-0604-4bd6-9ae5-dce0312bb35a:gasConsumption"})
 
 (defn on-day? [this year month day]
   (let [on (time/date-time year month day)]
@@ -132,11 +129,6 @@
      ;; try(all.data.usable<-subset(all.data.usable,property!="TSB118" | date>=as.Date("2012-01-01")))
      (not (and (= "TSB118" tsb-id)
                (time/before? tstamp (time/date-time 2012))))
-     
-     ;; # Manually remove bad meter for TSB024
-     ;; all.data.usable<-subset(all.data.usable,metercode!="6ae7adc3-7bdb-41cb-9492-a87a999ea5e0:gasConsumption")
-     (not (and (= "TSB118" tsb-id)
-               (= "6ae7adc3-7bdb-41cb-9492-a87a999ea5e0:gasConsumption" sensor-id)))
      
      ;; # Manually remove bad data for TSB052
      ;; try(all.data.usable<-subset(all.data.usable,property!="TSB052" | date>=as.Date("2011-12-01")))
